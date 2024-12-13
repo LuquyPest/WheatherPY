@@ -1,4 +1,6 @@
 #install SSH
+sudo apt update
+sudo apt upgrade
 sudo systemctl enable ssh
 sudo systemctl start ssh
 #install FTP
