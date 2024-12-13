@@ -63,4 +63,3 @@ Challenge 9 :<br>
 Challenge 10 :<br>
     Afficher les données de température et humidité dans un graphe<br>
     De préférence actualisé (live)<br>
-
