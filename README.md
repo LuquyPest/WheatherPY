@@ -18,12 +18,10 @@ Challenge 2 :<br>
     Affichez les données brutes (hexadécimales)<br>
 
 Challenge 3 :<br>
-    Afficher le résultat du scan Bluetooth<br>
-    Pareil que le challenge précédent<br>
-    Mais affichage intelligible des données :<br>
-        Température en degrés °<br>
-        Taux d'humidité en %<br>
-        État de la batterie en % <br>
+    Mais affichage intelligible des données :✅<br>
+        Température en degrés ° ✅/2<br>
+        Taux d'humidité en % ✅<br>
+        État de la batterie en % ✅<br>
 
 Challenge 4 :<br>
     Stocker les données dans une base de données<br>
