@@ -9,4 +9,4 @@ python3 -m venv weatherpy
 #activate venv
 . weatherpy/bin/activate
 pip install bluepy
-sudo run bluepy.py
+sudo run python3 meteo.py

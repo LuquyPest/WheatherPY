@@ -1,20 +1,28 @@
 def hexa_decimal(hex_data):
-    data = bytes.fromhex(hex_data)
+    
+    hex_data_batt = hex_data[20:22]
+    print(hex_data_batt)
+    dec_data_batt = int(hex_data_batt,16)
+    print(dec_data_batt)
+    
+    hex_data_hum = hex_data[28:32]
+    print(hex_data_hum)
+    dec_data_hum = int(hex_data_hum,16)/100
+    print(dec_data_hum)
+    
+    hex_data_temp = hex_data[24:28]
+    print(hex_data_temp)
+    dec_data_temp = int(hex_data_temp,16)
+    bit_sign = (dec_data_temp >> 14) & 1
+    temperature = dec_data_temp & ((2**14)-1)
+    if bit_sign == 1 :
+        temperature = -temperature
+    temperature = temperature/100
+    print(temperature)
+    
 
-    batt_percentage = data[19]
-    batt = batt_percentage * 100 // 0xFF
-    print(f"Batterie : {batt} %")
+    return temperature, dec_data_hum, dec_data_batt
 
-    temp_deg = (data[21] << 8) | data[22]
-    temp = temp_deg / 100.0
-    print(f"Temp : {temp:.2f} °C")
+hex_data = "ffcb11390123111628555b04097211b9000000"
 
-    hum_percentage = (data[23] << 8) | data[24]
-    hum = hum_percentage / 100.0
-    print(f"Hum : {hum:.2f} %")
-
-    return temp, hum, batt
-
-hex_data = "030852540201061316FFCB10390102012345670004FFFFFFFF000000"
-
-temp, hum, batte = hexa_decimal(hex_data)
+temp, hum, batt = hexa_decimal(hex_data)
