@@ -7,6 +7,6 @@ sudo apt install -y pip
 #create virtual environements "weatherpy"
 python3 -m venv weatherpy
 #activate venv
-. weatherp/bin/activate
+. weatherpy/bin/activate
 pip install bluepy
-
+sudo run bluepy.py
