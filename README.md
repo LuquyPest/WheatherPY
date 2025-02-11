@@ -12,10 +12,10 @@ Challenge 1 :
         FTP (proftpd, par un autre PC avec FileZilla) ✅<br>
 
 Challenge 2 :<br>
-    Afficher le résultat du scan Bluetooth<br>
-    En faisant un script Python<br>
-    Avec la librairie bluepy<br>
-    Affichez les données brutes (hexadécimales)<br>
+    Afficher le résultat du scan Bluetooth✅<br>
+    En faisant un script Python✅<br>
+    Avec la librairie bluepy✅<br>
+    Affichez les données brutes (hexadécimales)✅<br>
 
 Challenge 3 :<br>
     Mais affichage intelligible des données :✅<br>
