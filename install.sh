@@ -9,4 +9,4 @@ python3 -m venv weatherpy
 #activate venv
 . weatherpy/bin/activate
 pip install bluepy
-sudo run python3 meteo.py
+ sudo /home/pi/Desktop/WheatherPY/weatherpy/bin/python3.11 /home/pi/Desktop/WheatherPY/meteo.py
