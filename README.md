@@ -23,12 +23,14 @@ Challenge 3 :<br>
         Taux d'humidité en % ✅<br>
         État de la batterie en % ✅<br>
 
-Challenge 4 : Les fichiers sh et py sont fait il faut les testers et les modifiés Attention à changer les mdp etc<br>
+Challenge 4 : <br>
+    Les fichiers sh et py sont fait il faut les testers et les modifiés Attention à changer les mdp etc<br>
     Stocker les données dans une base de données<br>
     Sur le Raspberry Pi<br>
     Base de données MySQL (à installer et<br>
     configurer)<br>
     Faire des requêtes SQL ou utiliser peewee<br>
+    Show bas de donnée<br>
 
 Challenge 5 :<br>
     Afficher les données des capteurs dans une<br>
