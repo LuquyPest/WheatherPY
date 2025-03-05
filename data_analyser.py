@@ -22,6 +22,3 @@ def hexa_decimal(hex_data):
     
 
     return temperature, dec_data_hum, dec_data_batt
-hex_data = ""
-
-temp, hum, batt = hexa_decimal(hex_data)
