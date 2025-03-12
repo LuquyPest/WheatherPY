@@ -39,8 +39,7 @@ Challenge 5 :<br>
     Aller au plus simple, mais possibilité d'utiliser FastAPI<br>
  
 Challenge 6 :<br>
-    Afficher l'historique des données<br>
-    Triées par capteur et par date<br>
+w    Triées par capteur et par date<br>
     Rafraichie toutes les cinq minutes<br>
 
 Challenge 7 :<br>
