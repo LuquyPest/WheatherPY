@@ -15,8 +15,13 @@ class Sensor(Model):
         database = db
 
 # Création des tables si elles n'existent pas
-db.connect()
-db.create_tables([Sensor])
+# db.connect()
+# db.create_tables([Sensor])
 
+def rajoutdesinformationsdanslabdd (info1,info2,info3,info4):
+    Sensor.create(mac=info1, temp=info2, hum=info3, batt=info4)
 
-print("good")
+def afficherlabdd ():
+    for sensor in Sensor.select():
+        print(sensor.mac,sensor.temp,sensor.hum,sensor.batt,sensor.heurodatage)
+# afficherlabdd()

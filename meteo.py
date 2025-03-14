@@ -1,5 +1,5 @@
 import time
-import BDD
+from BDD import afficherlabdd, rajoutdesinformationsdanslabdd
 from bluepy.btle import Scanner, DefaultDelegate
 from data_analyser import hexa_decimal
 
@@ -19,12 +19,13 @@ class ScanDelegate(DefaultDelegate):
 
 scanner = Scanner().withDelegate(ScanDelegate())
 print("Scan des périphériques Bluetooth...")
-devices = scanner.scan(10.0)  # Scanner pendant 10 secondes
+devices = scanner.scan(5.0)  # Scanner pendant 10 secondes
 
 while True:
     
     for device in devices:
         if device.addr.upper() in TARGET_MAC_ADDRESSES:
+            # mac = TARGET_MAC_ADDRESSES[device.addr.upper()]
             for adtype, description, value in device.getScanData():
                 # Filtrer uniquement les données pertinentes
                 if description == "16b Service Data" and value.startswith("ffcb"):  # Vérifier le type et le préfixe
@@ -32,5 +33,7 @@ while True:
                     print(value)
                     temp, hum, batt = hexa_decimal(value)
                     # Afficher les résultats
+                    mac = device.addr.upper()
                     print(f"Température : {temp} °C, Humidité : {hum} %, Batterie : {batt} %")
+                    rajoutdesinformationsdanslabdd(mac, temp, hum, batt)
                     time.sleep(3)

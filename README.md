@@ -24,19 +24,19 @@ Challenge 3 :<br>
         État de la batterie en % ✅<br>
 
 Challenge 4 : <br>
-    Les fichiers sh et py sont fait il faut les testers et les modifiés Attention à changer les mdp etc<br>
-    Stocker les données dans une base de données<br>
+    Les fichiers sh et py sont fait il faut les testers et les modifiés Attention à changer les mdp etc<br>✅
+    Stocker les données dans une base de données<br>✅
     Sur le Raspberry Pi<br>
     Base de données MySQL (à installer et<br>✅
     configurer)<br>✅
     Faire des requêtes SQL ou utiliser peewee<br>✅
-    Show bas de donnée<br>
+    Show bas de donnée<br>✅
 
 Challenge 5 :<br>
-    Afficher les données des capteurs dans une<br>
-    page web<br>
-    Actualisée (live)<br>
-    Aller au plus simple, mais possibilité d'utiliser FastAPI<br>
+    Afficher les données des capteurs dans une<br>✅
+    page web<br>✅
+    Actualisée (live)<br>✅
+    Aller au plus simple, mais possibilité d'utiliser FastAPI<br>✅
  
 Challenge 6 :<br>
 w    Triées par capteur et par date<br>
