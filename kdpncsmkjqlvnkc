@@ -1,4 +1,40 @@
+import datetime
+from peewee import *
+
+# Connexion sans base spécifique pour pouvoir la créer
+db = MySQLDatabase('bdd_weath', user='pi', password='test', host='localhost', port=3306)
+
+class Sensor(Model):
+    mac = CharField()
+    temp = FloatField()
+    hum = FloatField()
+    batt = IntegerField()
+    heurodatage = DateTimeField(default=datetime.datetime.now)
+
+    class Meta:
+        database = db
+
+# Création des tables si elles n'existent pas
+# db.connect()
+# db.create_tables([Sensor])
+
+def rajoutdesinformationsdanslabdd (info1,info2,info3,info4):
+    Sensor.create(mac=info1, temp=info2, hum=info3, batt=info4)
+
+def afficherlabdd ():
+    for sensor in Sensor.select():
+        print(sensor.mac,sensor.temp,sensor.hum,sensor.batt,sensor.heurodatage)
+# afficherlabdd()
+
+# test
+
 from fastapi.responses import HTMLResponse
+from fastapi import FastAPI
+app = FastAPI()
+# @app.get("/sensors")
+# def get_sensors():
+#     sensors = Sensor.select()
+#     return [{"Mac": sensor.mac,"Temp": sensor.temp,"Hum" :sensor.hum,"Batt":sensor.batt,"Time": sensor.heurodatage} for sensor in sensors]
 
 @app.get("/", response_class=HTMLResponse)
 def home():
@@ -9,13 +45,13 @@ def home():
         <title>Live Data</title>
         <script>
             async function fetchData() {
-                const response = await fetch('/users');
+                const response = await fetch('/');
                 const data = await response.json();
                 const container = document.getElementById('data-container');
                 container.innerHTML = '';
                 data.forEach(user => {
                     const div = document.createElement('div');
-                    div.textContent = `Username: ${user.username}, Email: ${user.email}`;
+                    div.textContent = `Mac: ${sensor.mac}, Temp: ${sensor.temp}, Hum: ${sensor.hum}, Batt: ${sensor.batt}, Time: ${sensor.heurodatage}`;
                     container.appendChild(div);
                 });
             }
@@ -28,9 +64,11 @@ def home():
         </script>
     </head>
     <body>
-        <h1>Live User Data</h1>
+        <h1>Live Sensors Data</h1>
         <div id="data-container"></div>
     </body>
     </html>
     """
     return html_content
+
+    
