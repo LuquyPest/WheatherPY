@@ -1,7 +1,7 @@
 import datetime
 from peewee import *
-from fastapi.responses import HTMLResponse
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 
 # Connexion à la base de données
 db = MySQLDatabase('bdd_weath', user='pi', password='test', host='localhost', port=3306)
@@ -45,14 +45,14 @@ def home():
         <script>
             async function fetchData() {
                 try {
-                    const response = await fetch('/sensors');
+                    const response = await fetch('/sensors'); // Appel à la route /sensors
                     if (!response.ok) {
                         console.error('Erreur API:', response.status);
                         return;
                     }
-                    const data = await response.json();
+                    const data = await response.json(); // Récupération des données JSON
                     const container = document.getElementById('data-container');
-                    container.innerHTML = '';
+                    container.innerHTML = ''; // Réinitialisation du conteneur
                     data.forEach(sensor => {
                         const div = document.createElement('div');
                         div.textContent = `Mac: ${sensor.mac}, Temp: ${sensor.temp}, Hum: ${sensor.hum}, Batt: ${sensor.batt}, Time: ${sensor.heurodatage}`;
@@ -63,10 +63,7 @@ def home():
                 }
             }
 
-            // Actualiser toutes les 2 secondes
             setInterval(fetchData, 2000);
-
-            // Charger les données au démarrage
             window.onload = fetchData;
         </script>
     </head>
