@@ -31,4 +31,5 @@ FLUSH PRIVILEGES;
 SHOW DATABASES;
 EOF
 echo okay
+sudo /home/pi/Desktop/WheatherPY/weatherpy/bin/python3.11 /home/pi/Desktop/WheatherPY/BDD.py
 sudo /home/pi/Desktop/WheatherPY/weatherpy/bin/python3.11 /home/pi/Desktop/WheatherPY/meteo.py
