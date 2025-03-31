@@ -19,10 +19,10 @@ class ScanDelegate(DefaultDelegate):
 
 scanner = Scanner().withDelegate(ScanDelegate())
 print("Scan des périphériques Bluetooth...")
-devices = scanner.scan(5.0)  # Scanner pendant 10 secondes
 
 while True:
     
+    devices = scanner.scan(0.5)  # Scanner pendant 10 secondes
     for device in devices:
         if device.addr.upper() in TARGET_MAC_ADDRESSES:
             # mac = TARGET_MAC_ADDRESSES[device.addr.upper()]
