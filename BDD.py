@@ -14,9 +14,9 @@ class Sensor(Model):
     class Meta:
         database = db
 
-# Création des tables si elles n'existent pas
-# db.connect()
-# db.create_tables([Sensor])
+# Création des tables si elles n'existent pas ne pas com++
+db.connect()
+db.create_tables([Sensor])
 
 def rajoutdesinformationsdanslabdd (info1,info2,info3,info4):
     Sensor.create(mac=info1, temp=info2, hum=info3, batt=info4)
