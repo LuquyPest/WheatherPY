@@ -17,19 +17,23 @@ pip install bluepy
 pip install fastapi
 # Install de uvicorn
 pip install uvicorn
+# Install Jinja
+pip install jinja2
 # Install Peewee
 pip install peewee pymysql
 # Créa BDD
 DB_NAME="bdd_weath"
 DB_USER="pi"
 DB_PASS="test"
-sudo mysql -u root bdd_weath <<EOF
+echo okay1
+sudo mysql -u root <<EOF
 CREATE DATABASE IF NOT EXISTS $DB_NAME CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 CREATE USER IF NOT EXISTS '$DB_USER'@'localhost' IDENTIFIED BY '$DB_PASS';
 GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'localhost';
 FLUSH PRIVILEGES;
 SHOW DATABASES;
 EOF
-echo okay
+echo okay2
 sudo /home/pi/Desktop/WheatherPY/weatherpy/bin/python3.11 /home/pi/Desktop/WheatherPY/BDD.py
+uvicorn website:app --reload --host 0.0.0.0 --port 8000 &
 sudo /home/pi/Desktop/WheatherPY/weatherpy/bin/python3.11 /home/pi/Desktop/WheatherPY/meteo.py
