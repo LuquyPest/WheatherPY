@@ -1,13 +1,8 @@
 import time
-from BDD import afficherlabdd, rajoutdesinformationsdanslabdd
+from BDD import afficherlabdd, rajoutdesinformationsdanslabdd,TARGET_MAC_ADDRESSES
 from bluepy.btle import Scanner, DefaultDelegate
 from data_analyser import hexa_decimal
 
-TARGET_MAC_ADDRESSES = [
-    "D6:1C:BF:B7:76:62",
-    "D7:EF:13:27:15:29",
-    "D6:C6:C7:39:A2:E8"
-]
 # Classe pour gérer les événements de scan
 class ScanDelegate(DefaultDelegate):
     def handleDiscovery(self, dev, isNewDev, isNewData):
