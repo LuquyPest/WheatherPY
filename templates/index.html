@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
+    <!-- <meta http-equiv="refresh" content="5"> -->
     <title>Station Météo</title>
 </head>
 
@@ -29,15 +30,17 @@
         <div>
             <h1>Capteur {{loop.index}}</h1>
             <h1>{{capteur.mac}}</h1>
-        </div>
-        {% for mesure in capteur.mesures %}
-        <div>
-            <h2>Niveaux de batterie {{mesure.batterie}}%</h2>
-            <h2>Niveaux de Humidité {{mesure.humidite}}%</h2>
-            <h2>Niveaux de température {{mesure.temperature}}°C</h2>
+
+            {% for mesure in capteur.mesures %}
+            <div>
+                <h2>Time {{mesure.horodatage}}</h2>
+                <h2>Niveaux de batterie {{mesure.batterie}}%</h2>
+                <h2>Niveaux de Humidité {{mesure.humidite}}%</h2>
+                <h2>Niveaux de température {{mesure.temperature}}°C</h2>
+            </div>
+            {% endfor %}
 
         </div>
-        {% endfor %}
         {% endfor %}
 
 

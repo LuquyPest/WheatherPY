@@ -5,6 +5,7 @@ from BDD import *
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from datetime import datetime
 
 app = FastAPI()
 
@@ -17,7 +18,9 @@ templates = Jinja2Templates(directory="templates")
 class Mesure:
     batterie: float
     temperature: float
-    humitdite: float
+    humidite: float
+    horodatage: datetime
+
 
 
 @dataclass
@@ -38,7 +41,7 @@ async def read_item(request: Request):
         for donnee in capteur_donnees:
             # Créer une instance de Mesure à partir des données
             mesure = Mesure(
-                batterie=donnee.batt, temperature=donnee.temp, humitdite=donnee.hum
+                batterie=donnee.batt, temperature=donnee.temp, humidite=donnee.hum, horodatage=donnee.heurodatage
             )
             mesures.append(mesure)
 

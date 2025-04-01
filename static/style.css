@@ -17,19 +17,33 @@ section#bdd {
     display: flex;
 }
 
-section div {
-    flex-direction: row;
-    width: 33%;
-}
-
-section div h1 {
-    text-align: center;
-}
-
-section div article {
+section#bdd div {
     display: flex;
+    width: 33%;
+    flex-direction: column;
 }
 
-section div article h3 {
+section#bdd div h1,
+section#bdd div div {
     flex-direction: column;
+}
+
+section#bdd div div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+section#bdd div div h2 {
+    flex-direction: row;
+    width: 25%;
+
+}
+
+
+
+section#bdd div h1,
+section#bdd div div h2 {
+    text-align: center;
 }

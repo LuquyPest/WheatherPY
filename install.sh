@@ -12,6 +12,7 @@ sudo apt install -y pip
 python3 -m venv weatherpy
 #activate venv
 . weatherpy/bin/activate
+sudo apt install libglib2.0-dev -y
 pip install bluepy
 # Install de fast api
 pip install fastapi
