@@ -1,49 +1,135 @@
+/* Style général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Section Mérignac */
 section#merignac {
     width: 100%;
+    padding: 20px;
+    background-color: #f4f9f4;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+section#merignac h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #4CAF50;
+    /* Vert pastel */
 }
 
 section#merignac ul {
     display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
 }
 
 section#merignac ul li {
-    flex-direction: row;
+    flex: 1;
     text-align: center;
-    width: 33%;
     list-style: none;
+    font-weight: bold;
+    color: #6d6d6d;
+    font-size: 1.2rem;
 }
 
+/* Section BDD */
 section#bdd {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
 }
 
+/* Pour chaque capteur */
 section#bdd div {
     display: flex;
-    width: 33%;
     flex-direction: column;
+    background-color: #e7f5e1;
+    /* Vert très clair */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-section#bdd div h1,
-section#bdd div div {
-    flex-direction: column;
-}
-
-section#bdd div div {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-
-}
-
-section#bdd div div h2 {
-    flex-direction: row;
-    width: 25%;
-
-}
-
-
-
-section#bdd div h1,
-section#bdd div div h2 {
+section#bdd div h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #388e3c;
+    margin-bottom: 10px;
     text-align: center;
+}
+
+section#bdd div h2 {
+    font-size: 1rem;
+    color: #6d6d6d;
+    margin: 8px 0;
+    text-align: center;
+}
+
+/* Formulaire pour modifier le nom */
+section#bdd form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+section#bdd form input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+section#bdd form input[type="text"]:focus {
+    border: 1px solid #4CAF50;
+    /* Vert pastel sur focus */
+}
+
+section#bdd form button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+section#bdd form button:hover {
+    background-color: #388e3c;
+    /* Changement de couleur au survol */
+}
+
+section#bdd form button:active {
+    background-color: #2c6f28;
+    /* Couleur plus foncée au clic */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    section#merignac ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section#bdd {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    section#bdd div {
+        width: 100%;
+        max-width: 400px;
+    }
 }

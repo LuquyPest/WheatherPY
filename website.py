@@ -14,6 +14,9 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 ajouter_noms()
+ajouter_alertes()
+
+
 @dataclass
 class Mesure:
     batterie: float
@@ -38,6 +41,9 @@ def get_first_sensor_name(mac_address):
 
 
 
+
+
+
 TARGET_MAC_ADDRESSES = ["D6:1C:BF:B7:76:62", "D7:EF:13:27:15:29", "D6:C6:C7:39:A2:E8"]
 
 @app.post("/modifier_nom")
@@ -55,11 +61,39 @@ async def modifier_nom(request: Request, mac: str = Form(...), nouveau_nom: str 
     
     except DoesNotExist:
         return {"error": "Capteur non trouvé"}
+    
+@app.post("/alertes")
+async def alertes(request: Request, tempmax: float= Form(...), tempmin: float= Form(...), hummax: int= Form(...), hummin: int= Form(...), battmin: int= Form(...), emailreceiver: str= Form(...)):
+    try:
+        
+        alerte=Alerte.select().first()
+        
+        # Modifier le nom
+        alerte.tempmax = tempmax
+        alerte.tempmin = tempmin
+        alerte.hummax = hummax
+        alerte.hummin = hummin
+        alerte.battmin = battmin
+        alerte.emailreceiver = emailreceiver
+        
+        
+        alerte.save()
+
+        # Après avoir modifié, rediriger vers la page des capteurs
+        return RedirectResponse(url="/sensor", status_code=303)
+    
+    except DoesNotExist:
+        return {"error": "Capteur non trouvé"}
+    
+    
+    
+    
 
 @app.get("/sensor", response_class=HTMLResponse) 
 
 async def read_item(request: Request):
     capteurs = []
+    
     for address in TARGET_MAC_ADDRESSES:
         capteur_donnees = Sensor.select().where(Sensor.mac == address)
         mesures = []
@@ -74,8 +108,10 @@ async def read_item(request: Request):
         capteur = Capteur(mac=address,name=get_first_sensor_name(address), mesures=mesures)
 
         capteurs.append(capteur)
+    ajouter_alertes()
     return templates.TemplateResponse(
-        request=request, name="index.html", context={"capteurs": capteurs}
+        request=request, name="index.html", context={"capteurs": capteurs, "alertes": Alerte.select().first()
+}
     )
 
     return html_content

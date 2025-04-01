@@ -2,6 +2,7 @@ import time
 from BDD import afficherlabdd, rajoutdesinformationsdanslabdd,TARGET_MAC_ADDRESSES
 from bluepy.btle import Scanner, DefaultDelegate
 from data_analyser import hexa_decimal
+from alerte import check_alerts
 
 
 scanner = Scanner()
@@ -9,7 +10,7 @@ print("Scan des périphériques Bluetooth...")
 
 while True:
     
-    devices = scanner.scan(0.5)  
+    devices = scanner.scan(0.5)
     for device in devices:
         if device.addr.upper() in TARGET_MAC_ADDRESSES:
             # mac = TARGET_MAC_ADDRESSES[device.addr.upper()]
@@ -24,4 +25,5 @@ while True:
                     name = len(device.addr.upper())
                     print(f"Température : {temp} °C, Humidité : {hum} %, Batterie : {batt} %")
                     rajoutdesinformationsdanslabdd(mac, temp, hum, batt)
+                    check_alerts()
                     time.sleep(3)

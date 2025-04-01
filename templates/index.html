@@ -25,10 +25,31 @@
         </ul>
 
     </section>
+    <h1>Modifier les alertes</h1>
+    <form action="/alertes" method="post">
+        <label for="tempmax">Température max (°C): </label>
+        <input type="number" name="tempmax" value="{{ alertes.tempmax }}" required><br>
+
+        <label for="tempmin">Température min (°C): </label>
+        <input type="number" name="tempmin" value="{{ alertes.tempmin }}" required><br>
+
+        <label for="hummax">Humidité max (%): </label>
+        <input type="number" name="hummax" value="{{ alertes.hummax }}" required><br>
+
+        <label for="hummin">Humidité min (%): </label>
+        <input type="number" name="hummin" value="{{ alertes.hummin }}" required><br>
+
+        <label for="battmin">Batterie min (%): </label>
+        <input type="number" name="battmin" value="{{ alertes.battmin }}" required><br>
+
+        <label for="emailreceiver">Email du destinataire : </label>
+        <input type="email" name="emailreceiver" value="{{ alertes.emailreceiver }}" required><br>
+
+        <button type="submit">Modifier les alertes</button>
+    </form>
     <section id="bdd">
         {% for capteur in capteurs %}
         <div>
-            <h1>Capteur {{loop.index}}</h1>
             <h1>{{capteur.name}}</h1>
             <h1>{{capteur.mac}}</h1>
             <form action="/modifier_nom" method="post">

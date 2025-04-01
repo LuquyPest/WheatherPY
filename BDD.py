@@ -23,10 +23,20 @@ class Name(Model):
     mac = CharField()
     class Meta:
         database = db
+        
+class Alerte(Model):
+    tempmax = FloatField()
+    tempmin = FloatField()
+    hummax = IntegerField()
+    hummin = IntegerField()
+    battmin = IntegerField()
+    emailreceiver = CharField()
+    class Meta:
+        database = db
 
 # Création des tables si elles n'existent pas ne pas com++
 db.connect()
-db.create_tables([Sensor,Name])
+db.create_tables([Sensor,Name,Alerte])
 
 
 def ajouter_noms():
@@ -40,7 +50,17 @@ def ajouter_noms():
             Name.create(name=nom, mac=address)
         else:
             print(f"Le capteur avec l'adresse MAC {address} existe déjà.")
-        
+def ajouter_alertes():
+    if Alerte.select().count() == 0:  # Si la table est vide, ajouter des valeurs par défaut
+        Alerte.create(
+            tempmax=30.0,
+            tempmin=0.0,
+            hummax=70,
+            hummin=20,
+            battmin=20,
+            emailreceiver="example@example.com"
+        )
+         
         
 
 def modifier_nom(ancien_nom, nouveau_nom):
