@@ -1,10 +1,22 @@
+<!-- <html>
+<head>
+    <title>Item Details</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    {% for macadresse in malistedevice %}
+    <p><a href="{{macadresse}}">{{macadresse}}</a></p>
+      {% endfor %}
+</body>
+</html> -->
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
     <title>Station Météo</title>
 </head>
 
@@ -25,54 +37,12 @@
 
     </section>
     <section id="bdd">
-        <div id="demo1">
-            <!-- le nom  -->
-            <h1><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h1>
-            <!-- l'addresse -->
-            <h2><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h2>
-            <!-- le % batterie -->
-            <h2><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h2>
-            <article>
-                <!-- la Température -->
-                <h3><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h3>
-                <!-- l'Humidité -->
-                <h3><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h3>
-            </article>
+        {% for macadresse in malistedevice %}
+        <div><h1"{{macadresse}}">{{macadresse}}</h1></div>
+        {% endfor %}
+        
 
-
-        </div>
-        <div id="demo2">
-            <!-- le nom  -->
-            <h1><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h1>
-            <!-- l'addresse -->
-            <h2><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h2>
-            <!-- le % batterie -->
-            <h2><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h2>
-            <article>
-                <!-- la Température -->
-                <h3><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h3>
-                <!-- l'Humidité -->
-                <h3><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h3>
-            </article>
-
-
-        </div>
-        <div id="demo3">
-            <!-- le nom  -->
-            <h1><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h1>
-            <!-- l'addresse -->
-            <h2><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h2>
-            <!-- le % batterie -->
-            <h2><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h2>
-            <article>
-                <!-- la Température -->
-                <h3><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h3>
-                <!-- l'Humidité -->
-                <h3><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h3>
-            </article>
-
-
-        </div>
+        
 
 
     </section>

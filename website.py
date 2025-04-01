@@ -4,6 +4,7 @@ from BDD import *
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -11,10 +12,13 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 @app.get("/sensor", response_class=HTMLResponse)
-async def read_item(request: Request, id: str):
+async def read_item(request: Request):
+    malistedevice =TARGET_MAC_ADDRESSES
     return templates.TemplateResponse(
-        request=request, name="item.html", context={"id": id}
+        request=request, name="index.html", context={"malistedevice": malistedevice}
     )
+
+
 
 
 # # Route pour récupérer les données des capteurs
@@ -71,4 +75,4 @@ async def read_item(request: Request, id: str):
 #     </body>
 #     </html>
 #     """
-#     return html_content
+    return html_content

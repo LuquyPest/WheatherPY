@@ -1,6 +1,10 @@
 import datetime
 from peewee import *
-
+TARGET_MAC_ADDRESSES = [
+    "D6:1C:BF:B7:76:62",
+    "D7:EF:13:27:15:29",
+    "D6:C6:C7:39:A2:E8"
+]
 # Connexion sans base spécifique pour pouvoir la créer
 db = MySQLDatabase('bdd_weath', user='pi', password='test', host='localhost', port=3306)
 
