@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
-    <meta http-equiv="refresh" content="5">
+    <!-- <meta http-equiv="refresh" content="5"> -->
     <title>Station Météo</title>
 </head>
 
@@ -29,7 +29,14 @@
         {% for capteur in capteurs %}
         <div>
             <h1>Capteur {{loop.index}}</h1>
+            <h1>{{capteur.name}}</h1>
             <h1>{{capteur.mac}}</h1>
+            <form action="/modifier_nom" method="post">
+                <input type="hidden" name="mac" value="{{ capteur.mac }}">
+                <label for="nouveau_nom">Nouveau nom : </label>
+                <input type="text" id="nouveau_nom" name="nouveau_nom" value="{{ capteur.name }}" required>
+                <button type="submit">Modifier</button>
+            </form>
             {% for mesure in capteur.mesures %}
             <div>
                 <h2>Time {{mesure.horodatage}}</h2>

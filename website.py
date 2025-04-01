@@ -1,7 +1,7 @@
 
 from dataclasses import dataclass
-from fastapi.responses import HTMLResponse
-from fastapi import FastAPI
+from fastapi.responses import HTMLResponse,RedirectResponse
+from fastapi import FastAPI,Form
 from BDD import *
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
@@ -13,8 +13,7 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
-
-
+ajouter_noms()
 @dataclass
 class Mesure:
     batterie: float
@@ -26,11 +25,36 @@ class Mesure:
 @dataclass
 class Capteur:
     mac: str
+    name: str
     mesures: list[Mesure]
+
+def get_first_sensor_name(mac_address):
+    # Rechercher le premier capteur avec une adresse MAC spécifique
+    capteur = Name.select().where(Name.mac == mac_address).first()
+    if capteur:
+        return capteur.name
+    else:
+        return "Unknown"
+
 
 
 TARGET_MAC_ADDRESSES = ["D6:1C:BF:B7:76:62", "D7:EF:13:27:15:29", "D6:C6:C7:39:A2:E8"]
 
+@app.post("/modifier_nom")
+async def modifier_nom(request: Request, mac: str = Form(...), nouveau_nom: str = Form(...)):
+    try:
+        # Trouver l'entrée avec l'adresse MAC spécifiée
+        capteur = Name.get(Name.mac == mac)
+        
+        # Modifier le nom
+        capteur.name = nouveau_nom
+        capteur.save()
+
+        # Après avoir modifié, rediriger vers la page des capteurs
+        return RedirectResponse(url="/sensor", status_code=303)
+    
+    except DoesNotExist:
+        return {"error": "Capteur non trouvé"}
 
 @app.get("/sensor", response_class=HTMLResponse) 
 
@@ -47,7 +71,7 @@ async def read_item(request: Request):
             mesures.append(mesure)
 
         # Créer une instance de Capteur avec les mesures
-        capteur = Capteur(mac=address, mesures=mesures)
+        capteur = Capteur(mac=address,name=get_first_sensor_name(address), mesures=mesures)
 
         capteurs.append(capteur)
     return templates.TemplateResponse(

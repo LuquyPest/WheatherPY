@@ -3,21 +3,13 @@ from BDD import afficherlabdd, rajoutdesinformationsdanslabdd,TARGET_MAC_ADDRESS
 from bluepy.btle import Scanner, DefaultDelegate
 from data_analyser import hexa_decimal
 
-# Classe pour gérer les événements de scan
-class ScanDelegate(DefaultDelegate):
-    def handleDiscovery(self, dev, isNewDev, isNewData):
-        if isNewDev:
-            print(f"Nouvel appareil détecté : {dev.addr}")
-        elif isNewData:
-            print(f"Données mises à jour pour : {dev.addr}")
 
-
-scanner = Scanner().withDelegate(ScanDelegate())
+scanner = Scanner()
 print("Scan des périphériques Bluetooth...")
 
 while True:
     
-    devices = scanner.scan(0.5)  # Scanner pendant 10 secondes
+    devices = scanner.scan(0.5)  
     for device in devices:
         if device.addr.upper() in TARGET_MAC_ADDRESSES:
             # mac = TARGET_MAC_ADDRESSES[device.addr.upper()]
@@ -29,6 +21,7 @@ while True:
                     temp, hum, batt = hexa_decimal(value)
                     # Afficher les résultats
                     mac = device.addr.upper()
+                    name = len(device.addr.upper())
                     print(f"Température : {temp} °C, Humidité : {hum} %, Batterie : {batt} %")
                     rajoutdesinformationsdanslabdd(mac, temp, hum, batt)
                     time.sleep(3)
