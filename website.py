@@ -1,3 +1,4 @@
+
 from dataclasses import dataclass
 from fastapi.responses import HTMLResponse
 from fastapi import FastAPI
@@ -22,7 +23,6 @@ class Mesure:
     horodatage: datetime
 
 
-
 @dataclass
 class Capteur:
     mac: str
@@ -32,7 +32,8 @@ class Capteur:
 TARGET_MAC_ADDRESSES = ["D6:1C:BF:B7:76:62", "D7:EF:13:27:15:29", "D6:C6:C7:39:A2:E8"]
 
 
-@app.get("/sensor", response_class=HTMLResponse)
+@app.get("/sensor", response_class=HTMLResponse) 
+
 async def read_item(request: Request):
     capteurs = []
     for address in TARGET_MAC_ADDRESSES:

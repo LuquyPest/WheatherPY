@@ -30,17 +30,18 @@
         <div>
             <h1>Capteur {{loop.index}}</h1>
             <h1>{{capteur.mac}}</h1>
-
             {% for mesure in capteur.mesures %}
             <div>
                 <h2>Time {{mesure.horodatage}}</h2>
                 <h2>Niveaux de batterie {{mesure.batterie}}%</h2>
                 <h2>Niveaux de Humidité {{mesure.humidite}}%</h2>
                 <h2>Niveaux de température {{mesure.temperature}}°C</h2>
+
             </div>
             {% endfor %}
 
         </div>
+
         {% endfor %}
 
 
