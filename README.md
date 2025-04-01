@@ -41,6 +41,7 @@ Challenge 5 :<br>
 Challenge 6 :<br>
 w    Triées par capteur et par date<br✅
     Rafraichie toutes les cinq minutes<br>✅
+    poue nous les 5sc
 
 Challenge 7 :<br>
     Proposer une interface pour renommer chaque capteur<br>
