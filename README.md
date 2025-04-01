@@ -39,8 +39,8 @@ Challenge 5 :<br>
     Aller au plus simple, mais possibilité d'utiliser FastAPI<br>✅
  
 Challenge 6 :<br>
-w    Triées par capteur et par date<br>
-    Rafraichie toutes les cinq minutes<br>
+w    Triées par capteur et par date<br✅
+    Rafraichie toutes les cinq minutes<br>✅
 
 Challenge 7 :<br>
     Proposer une interface pour renommer chaque capteur<br>
