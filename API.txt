@@ -9,3 +9,98 @@ id station : 33281001
 Attention time zone h-2
 
 2025001731663
+Les requetes
+
+Requete pour récuperer le numéro de commande :
+
+CURL
+curl -X 'GET' \
+  'https://public-api.meteofrance.fr/public/DPClim/v1/commande-station/horaire?id-station=33281001&date-deb-periode=2025-04-02T06%3A00%3A00Z&date-fin-periode=2025-04-02T07%3A00%3A00Z' \
+  -H 'accept: */*' \
+  -H 'apikey: eyJ4NXQiOiJZV0kxTTJZNE1qWTNOemsyTkRZeU5XTTRPV014TXpjek1UVmhNbU14T1RSa09ETXlOVEE0Tnc9PSIsImtpZCI6ImdhdGV3YXlfY2VydGlmaWNhdGVfYWxpYXMiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJFZG91YXJkOTlAY2FyYm9uLnN1cGVyIiwiYXBwbGljYXRpb24iOnsib3duZXIiOiJFZG91YXJkOTkiLCJ0aWVyUXVvdGFUeXBlIjpudWxsLCJ0aWVyIjoiVW5saW1pdGVkIiwibmFtZSI6IkRlZmF1bHRBcHBsaWNhdGlvbiIsImlkIjoyNjMzNiwidXVpZCI6IjQ3Y2Y5MGY1LTRlZTEtNDg5Mi05MWE4LTg0MWY1NTE4MDYzYyJ9LCJpc3MiOiJodHRwczpcL1wvcG9ydGFpbC1hcGkubWV0ZW9mcmFuY2UuZnI6NDQzXC9vYXV0aDJcL3Rva2VuIiwidGllckluZm8iOnsiNTBQZXJNaW4iOnsidGllclF1b3RhVHlwZSI6InJlcXVlc3RDb3VudCIsImdyYXBoUUxNYXhDb21wbGV4aXR5IjowLCJncmFwaFFMTWF4RGVwdGgiOjAsInN0b3BPblF1b3RhUmVhY2giOnRydWUsInNwaWtlQXJyZXN0TGltaXQiOjAsInNwaWtlQXJyZXN0VW5pdCI6InNlYyJ9fSwia2V5dHlwZSI6IlBST0RVQ1RJT04iLCJzdWJzY3JpYmVkQVBJcyI6W3sic3Vic2NyaWJlclRlbmFudERvbWFpbiI6ImNhcmJvbi5zdXBlciIsIm5hbWUiOiJBUk9NRSIsImNvbnRleHQiOiJcL3B1YmxpY1wvYXJvbWVcLzEuMCIsInB1Ymxpc2hlciI6ImFkbWluX21mIiwidmVyc2lvbiI6IjEuMCIsInN1YnNjcmlwdGlvblRpZXIiOiI1MFBlck1pbiJ9LHsic3Vic2NyaWJlclRlbmFudERvbWFpbiI6ImNhcmJvbi5zdXBlciIsIm5hbWUiOiJEb25uZWVzUHVibGlxdWVzQ2xpbWF0b2xvZ2llIiwiY29udGV4dCI6IlwvcHVibGljXC9EUENsaW1cL3YxIiwicHVibGlzaGVyIjoiYWRtaW5fbWYiLCJ2ZXJzaW9uIjoidjEiLCJzdWJzY3JpcHRpb25UaWVyIjoiNTBQZXJNaW4ifV0sImV4cCI6MTgzODI0OTM1NywidG9rZW5fdHlwZSI6ImFwaUtleSIsImlhdCI6MTc0MzU3NjU1NywianRpIjoiZjczMjEyOGYtZGRkZC00ZDczLWJkMTktYmUxNWFhM2JjZGNiIn0=.cEJawUJ6j6_BhYuWdDRs6V4p9t2KmiNOHPmiJZL1YkkzjqOt_1OzZtoy4g1xpfaoZQrOZVASPECYryYyj8USkiGCGyw8Ufa35kf2Xwrpv9jXFpKwHvDh4xMHwKMmT9eQZgaZnK6LFjRUWbvUG3Au0EnhRCr9BYGfaTJ1JRwM1xfydBPQBI2wv4bI3WhoyZeYvwkujCHsF7ZAu-rXkfq9Kn9slbjcnd463LWjuDfq5ScrFXeblHstNkAhStjcBJIzP8IjDQYQl9bpu0xRM3GO_3UL-tOtv_-uTpXMcbm8si-G16NPpjCQBNm-YVsVe5bX2w4-MnJ5v9of4wj3fhz-Kg=='
+URL
+https://public-api.meteofrance.fr/public/DPClim/v1/commande-station/horaire?id-station=33281001&date-deb-periode=2025-04-02T06%3A00%3A00Z&date-fin-periode=2025-04-02T07%3A00%3A00Z
+
+Requete pour recuperer la commande :
+
+CURL :
+curl -X 'GET' \
+  'https://public-api.meteofrance.fr/public/DPClim/v1/commande/fichier?id-cmde=2025001734355' \
+  -H 'accept: */*' \
+  -H 'apikey: eyJ4NXQiOiJZV0kxTTJZNE1qWTNOemsyTkRZeU5XTTRPV014TXpjek1UVmhNbU14T1RSa09ETXlOVEE0Tnc9PSIsImtpZCI6ImdhdGV3YXlfY2VydGlmaWNhdGVfYWxpYXMiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJFZG91YXJkOTlAY2FyYm9uLnN1cGVyIiwiYXBwbGljYXRpb24iOnsib3duZXIiOiJFZG91YXJkOTkiLCJ0aWVyUXVvdGFUeXBlIjpudWxsLCJ0aWVyIjoiVW5saW1pdGVkIiwibmFtZSI6IkRlZmF1bHRBcHBsaWNhdGlvbiIsImlkIjoyNjMzNiwidXVpZCI6IjQ3Y2Y5MGY1LTRlZTEtNDg5Mi05MWE4LTg0MWY1NTE4MDYzYyJ9LCJpc3MiOiJodHRwczpcL1wvcG9ydGFpbC1hcGkubWV0ZW9mcmFuY2UuZnI6NDQzXC9vYXV0aDJcL3Rva2VuIiwidGllckluZm8iOnsiNTBQZXJNaW4iOnsidGllclF1b3RhVHlwZSI6InJlcXVlc3RDb3VudCIsImdyYXBoUUxNYXhDb21wbGV4aXR5IjowLCJncmFwaFFMTWF4RGVwdGgiOjAsInN0b3BPblF1b3RhUmVhY2giOnRydWUsInNwaWtlQXJyZXN0TGltaXQiOjAsInNwaWtlQXJyZXN0VW5pdCI6InNlYyJ9fSwia2V5dHlwZSI6IlBST0RVQ1RJT04iLCJzdWJzY3JpYmVkQVBJcyI6W3sic3Vic2NyaWJlclRlbmFudERvbWFpbiI6ImNhcmJvbi5zdXBlciIsIm5hbWUiOiJBUk9NRSIsImNvbnRleHQiOiJcL3B1YmxpY1wvYXJvbWVcLzEuMCIsInB1Ymxpc2hlciI6ImFkbWluX21mIiwidmVyc2lvbiI6IjEuMCIsInN1YnNjcmlwdGlvblRpZXIiOiI1MFBlck1pbiJ9LHsic3Vic2NyaWJlclRlbmFudERvbWFpbiI6ImNhcmJvbi5zdXBlciIsIm5hbWUiOiJEb25uZWVzUHVibGlxdWVzQ2xpbWF0b2xvZ2llIiwiY29udGV4dCI6IlwvcHVibGljXC9EUENsaW1cL3YxIiwicHVibGlzaGVyIjoiYWRtaW5fbWYiLCJ2ZXJzaW9uIjoidjEiLCJzdWJzY3JpcHRpb25UaWVyIjoiNTBQZXJNaW4ifV0sImV4cCI6MTgzODI0OTM1NywidG9rZW5fdHlwZSI6ImFwaUtleSIsImlhdCI6MTc0MzU3NjU1NywianRpIjoiZjczMjEyOGYtZGRkZC00ZDczLWJkMTktYmUxNWFhM2JjZGNiIn0=.cEJawUJ6j6_BhYuWdDRs6V4p9t2KmiNOHPmiJZL1YkkzjqOt_1OzZtoy4g1xpfaoZQrOZVASPECYryYyj8USkiGCGyw8Ufa35kf2Xwrpv9jXFpKwHvDh4xMHwKMmT9eQZgaZnK6LFjRUWbvUG3Au0EnhRCr9BYGfaTJ1JRwM1xfydBPQBI2wv4bI3WhoyZeYvwkujCHsF7ZAu-rXkfq9Kn9slbjcnd463LWjuDfq5ScrFXeblHstNkAhStjcBJIzP8IjDQYQl9bpu0xRM3GO_3UL-tOtv_-uTpXMcbm8si-G16NPpjCQBNm-YVsVe5bX2w4-MnJ5v9of4wj3fhz-Kg=='
+
+URL :
+https://public-api.meteofrance.fr/public/DPClim/v1/commande/fichier?id-cmde=2025001734355
+
+Type de réponse : 
+
+POSTE;DATE;RR1;QRR1;DRR1;QDRR1;HNEIGEF;QHNEIGEF;NEIGETOT;QNEIGETOT;T;QT;TD;QTD;TN;QTN;HTN;QHTN;TX;QTX;HTX;QHTX;DG;QDG;T10;QT10;T20;QT20;T50;QT50;T100;QT100;TNSOL;QTNSOL;TN50;QTN50;TCHAUSSEE;QTCHAUSSEE;TW;QTW;PSTAT;QPSTAT;PMER;QPMER;GEOP;QGEOP;PMERMIN;QPMERMIN;FF;QFF;DD;QDD;FXI;QFXI;DXI;QDXI;HXI;QHXI;FXY;QFXY;DXY;QDXY;HXY;QHXY;FF2;QFF2;DD2;QDD2;FXI2;QFXI2;DXI2;QDXI2;HXI2;QHXI2;FXI3S;QFXI3S;DXI3S;QDXI3S;HXI3S;QHXI3S;U;QU;UN;QUN;HUN;QHUN;UX;QUX;HUX;QHUX;UABS;QUABS;DHUMI40;QDHUMI40;DHUMI80;QDHUMI80;DHUMEC;QDHUMEC;TSV;QTSV;ENTH;QENTH;INS;QINS;GLO;QGLO;DIR;QDIR;DIF;QDIF;GLO2;QGLO2;UV;QUV;INFRAR;QINFRAR;UV_INDICE;QUV_INDICE;N;QN;NBAS;QNBAS;CL;QCL;CM;QCM;CH;QCH;N1;QN1;C1;QC1;B1;QB1;N2;QN2;C2;QC2;B2;QB2;N3;QN3;B3;QB3;C3;QC3;N4;QN4;C4;QC4;B4;QB4;WW;QWW;VV;QVV;DVV200;QDVV200;W1;QW1;W2;QW2;SOL;QSOL;SOLNG;QSOLNG;TSNEIGE;QTSNEIGE;TUBENEIGE;QTUBENEIGE;ESNEIGE;QESNEIGE;HNEIGEFI3;QHNEIGEFI3;HNEIGEFI1;QHNEIGEFI1;TMER;QTMER;VVMER;QVVMER;ETATMER;QETATMER;DIRHOULE;QDIRHOULE;TLAGON;QTLAGON;UV2;QUV2;INS2;QINS2;INFRAR2;QINFRAR2;DIR2;QDIR2;DIF2;QDIF2
+
+33281001;2025040206;0,0;9;16;9;;;0;9;8,9;9;5,6;9;8,9;9;501;9;9,1;9;525;9;0;9;12,5;9;13,1;9;13,5;9;13,0;9;8,0;9;8,1;9;8,0;9;7,4;9;998,2;9;1004,0;9;;;1003,9;9;4,0;9;30;9;9,0;9;30;9;504;9;5,7;9;30;9;501;9;;;;;;;;;;;8,1;9;;;510;9;80;9;78;9;534;9;81;9;501;9;7,0;9;0;9;24;9;;;9,1;9;23,2;9;0;9;0;9;0;9;;;0,0;9;0,000;9;;;0;9;7;9;7;9;;;;;;;1;9;;;1620;9;7;9;;;2160;9;7;9;2640;9;;;;;;;;;60;9;38533;9;0;9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;0,000;9;0;9;;;0;9;;
+
+33281001;2025040207;0,0;9;;;;;0;9;8,9;9;5,5;9;8,9;9;601;9;9,0;9;618;9;0;9;12,5;9;13,0;9;13,5;9;13,0;9;7,8;9;7,8;9;7,8;9;7,3;9;998,5;9;1004,3;9;;;1004,0;9;4,7;9;20;9;7,9;9;30;9;649;9;5,3;9;20;9;655;9;;;;;;;;;;;7,3;9;;;649;9;79;9;78;9;619;9;80;9;610;9;6,9;9;0;9;3;9;;;9,0;9;23,0;9;0;9;5;9;0;9;;;;;;;;;;;8;9;1;9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;0;9;44750;9;;;;;;;1;9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+La température c'est la 11eme valeur de la ligne 39 ici 8.9
+
+test en python
+
+import requests
+
+# Clé API (remplace avec la tienne)
+API_KEY = "TA_CLE_API"
+
+# URL de la première requête (commande de données)
+url_commande = "https://public-api.meteofrance.fr/public/DPClim/v1/commande-station/horaire"
+params_commande = {
+    "id-station": "33281001",
+    "date-deb-periode": "2025-04-02T06:00:00Z",
+    "date-fin-periode": "2025-04-02T07:00:00Z",
+}
+
+headers = {
+    "accept": "*/*",
+    "apikey": API_KEY
+}
+
+try:
+    # Envoyer la requête pour obtenir l'ID de commande
+    response = requests.get(url_commande, headers=headers, params=params_commande)
+    data = response.json()
+    print("Réponse brute de l'API:", data)
+
+    if "code" in data and data["code"] == "900901":
+        raise Exception("Authentification échouée : Vérifie la clé API.")
+
+    # Récupérer l'ID de commande
+    id_commande = data.get("elaboreProduitAvecDemandeResponse", {}).get("return")
+    if not id_commande:
+        raise Exception("L'ID de commande est introuvable dans la réponse de l'API.")
+
+    print(f"ID de commande obtenu: {id_commande}")
+
+    # URL pour récupérer le fichier de données
+    url_fichier = f"https://public-api.meteofrance.fr/public/DPClim/v1/commande/fichier?id-cmde={id_commande}"
+    
+    # Télécharger le fichier
+    response_fichier = requests.get(url_fichier, headers=headers)
+    fichier_texte = response_fichier.text
+
+    print("Contenu du fichier récupéré:", fichier_texte)
+
+    # Extraire la température
+    lignes = fichier_texte.split("\n")
+    if len(lignes) < 2:
+        raise Exception("Le fichier de réponse ne contient pas suffisamment de données.")
+
+    donnees = lignes[1].split(";")
+    if len(donnees) < 11:
+        raise Exception("Format des données inattendu.")
+
+    temperature = donnees[10]
+    print(f"Température récupérée : {temperature}°C")
+
+except Exception as e:
+    print(f"Erreur lors de la récupération des données : {e}")
+
+
