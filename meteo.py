@@ -9,7 +9,6 @@ scanner = Scanner()
 print("Scan des périphériques Bluetooth...")
 
 while True:
-    
     devices = scanner.scan(0.5)
     for device in devices:
         if device.addr.upper() in TARGET_MAC_ADDRESSES:
