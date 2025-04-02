@@ -39,26 +39,26 @@ Challenge 5 :<br>
     Aller au plus simple, mais possibilité d'utiliser FastAPI<br>✅
  
 Challenge 6 :<br>
-w    Triées par capteur et par date<br✅
+w    Triées par capteur et par date<br>✅
     Rafraichie toutes les cinq minutes<br>✅
-    pour nous les 5sc
+    pour nous les 5sc✅
 
 Challenge 7 :<br>
-    Proposer une interface pour renommer chaque capteur<br>
+    Proposer une interface pour renommer chaque capteur✅<br>
 
 Challenge 8 :<br>
-    Afficher la température extérieure donnée par la météo<br>
-    Opendata :<br>
-    https://donneespubliques.meteofrance.fr/?fond=produit&id_produit=90&id_rubrique=32<br>
-    Station BORDEAUX-MÉRIGNAC, ID 07510<br>
-    Possibilité d'utiliser httpx<br>
+    Afficher la température extérieure donnée par la météo✅<br>
+    Opendata :✅<br>
+    https://donneespubliques.meteofrance.fr/?fond=produit&id_produit=90&id_rubrique=32✅<br>
+    Station BORDEAUX-MÉRIGNAC, ID 07510✅<br>
+    Possibilité d'utiliser httpx✅<br>
 
 Challenge 9 :<br>
-    Gérer des alertes<br>
-    Seuil de température ou d'humidité<br>
-    Envoi par mail de l'alerte Paramétrable<br>
-    Configuration des seuils Fréquence de scrutation<br>
-    Destinataires des mails<br>
+    Gérer des alertes✅<br>
+    Seuil de température ou d'humidité✅<br>
+    Envoi par mail de l'alerte Paramétrable✅<br>
+    Configuration des seuils Fréquence de scrutation✅<br>
+    Destinataires des mails✅<br>
 
 Challenge 10 :<br>
     Afficher les données de température et humidité dans un graphe<br>
