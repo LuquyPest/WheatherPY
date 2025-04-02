@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Capteurs</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 80%; margin: auto; }
+    </style>
+</head>
+<body>
+    <h1>📊 Évolution des Capteurs</h1>
+    <div class="container">
+        <div id="graph"></div> <!-- Conteneur pour le graphique -->
+    </div>
+
+    <script>
+        async function fetchData() {
+            try {
+                const response = await fetch("http://127.0.0.1:8000/data");
+                const data = await response.json();
+
+                // Extraire les valeurs
+                let times = data.map(d => d.heurodatage);
+                let temps = data.map(d => d.temp);
+                let hums = data.map(d => d.hum);
+                let batts = data.map(d => d.batt);
+
+                // Création des traces Plotly
+                let traceTemp = { x: times, y: temps, mode: "lines+markers", name: "Température" };
+                let traceHum = { x: times, y: hums, mode: "lines+markers", name: "Humidité" };
+                let traceBatt = { x: times, y: batts, mode: "lines+markers", name: "Batterie" };
+
+                let layout = { title: "Évolution des Mesures", xaxis: { title: "Temps" }, yaxis: { title: "Valeurs" } };
+
+                // Afficher le graphique
+                Plotly.newPlot("graph", [traceTemp, traceHum, traceBatt], layout);
+
+            } catch (error) {
+                console.error("Erreur lors du chargement des données", error);
+            }
+        }
+
+        // Charger les données au démarrage
+        fetchData();
+    </script>
+</body>
+</html>
