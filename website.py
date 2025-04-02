@@ -7,6 +7,7 @@ from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from datetime import datetime
+from temperatureMerignac import temperature_merignac
 
 app = FastAPI()
 
@@ -16,6 +17,7 @@ templates = Jinja2Templates(directory="templates")
 ajouter_noms()
 ajouter_alertes()
 
+temperature = temperature_merignac()
 
 @dataclass
 class Mesure:
@@ -110,8 +112,7 @@ async def read_item(request: Request):
         capteurs.append(capteur)
     ajouter_alertes()
     return templates.TemplateResponse(
-        request=request, name="index.html", context={"capteurs": capteurs, "alertes": Alerte.select().first()
-}
+        request=request, name="index.html", context={"capteurs": capteurs, "alertes": Alerte.select().first(),"temperature": temperature}
     )
 
     return html_content
