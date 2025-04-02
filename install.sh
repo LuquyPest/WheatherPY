@@ -1,27 +1,27 @@
 # #install SSH
-# sudo systemctl enable ssh
-# sudo systemctl start ssh
-# sudo apt install -y proftpd
-# # Install MariaDB
-# sudo apt install mariadb-server mariadb-client -y
-# sudo systemctl start mariadb
-# sudo systemctl enable mariadb
-# #install pip for installation of bluePY
-# sudo apt install -y pip 
-# #create virtual environements "weatherpy"
-# python3 -m venv weatherpy
+sudo systemctl enable ssh
+sudo systemctl start ssh
+sudo apt install -y proftpd
+# Install MariaDB
+sudo apt install mariadb-server mariadb-client -y
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+#install pip for installation of bluePY
+sudo apt install -y pip 
+#create virtual environements "weatherpy"
+python3 -m venv weatherpy
 #activate venv
 . weatherpy/bin/activate
-# sudo apt install libglib2.0-dev -y
-# pip install bluepy
-# # Install de fast api
-# pip install fastapi
-# # Install de uvicorn
-# pip install uvicorn
-# # Install Jinja
-# pip install jinja2
-# # Install Peewee
-# pip install peewee pymysql
+sudo apt install libglib2.0-dev -y
+pip install bluepy
+# Install de fast api
+pip install fastapi
+# Install de uvicorn
+pip install uvicorn
+# Install Jinja
+pip install jinja2
+# Install Peewee
+pip install peewee pymysql
 pip install python-multipart
 pip install requests
 # Créa BDD
