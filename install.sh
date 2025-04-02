@@ -23,6 +23,7 @@
 # # Install Peewee
 # pip install peewee pymysql
 pip install python-multipart
+pip install requests
 # Créa BDD
 DB_NAME="bdd_weath"
 DB_USER="pi"
