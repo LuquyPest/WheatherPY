@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Station Météo</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <section id="merignac">
+        <h2>Mérignac = {{ temperaturem }}°</h2>
+        <ul>
+            <li>Température</li>
+            <li>Humidité</li>
+            <li>Date</li>
+        </ul>
+    </section>
+
+    <section id="alertes">
+        <h1>Modifier les alertes</h1>
+        <a href="alertes.html" class="btn-link">🛠️ Accéder au formulaire de configuration</a>
+    </section>
+
+    <section id="bdd">
+        {% for capteur in capteurs %}
+        <div>
+            <h1>{{ capteur.name }}</h1>
+            <h1>{{ capteur.mac }}</h1>
+            <form action="/modifier_nom" method="post">
+                <input type="hidden" name="mac" value="{{ capteur.mac }}">
+                <label for="nouveau_nom">Nouveau nom : </label>
+                <input type="text" id="nouveau_nom" name="nouveau_nom" value="{{ capteur.name }}" required>
+                <button type="submit">Modifier</button>
+            </form>
+            {% for mesure in capteur.mesures %}
+            <div>
+                <h2>Time {{ mesure.horodatage }}</h2>
+                <h2>Batterie {{ mesure.batterie }}%</h2>
+                <h2>Humidité {{ mesure.humidite }}%</h2>
+                <h2>Température {{ mesure.temperature }}°C</h2>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </section>
+</body>
+
+</html>

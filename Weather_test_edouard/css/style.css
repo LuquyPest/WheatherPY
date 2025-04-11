@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #eef2f3, #ffffff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2 {
+    color: #2c3e50;
+    margin-bottom: 0.5em;
+}
+
+section {
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 900px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+#merignac {
+    background-color: #e3f2fd;
+    border-left: 6px solid #42a5f5;
+}
+
+#merignac ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+form label {
+    font-weight: 500;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+form button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #27ae60;
+}
+
+#bdd>div {
+    margin-top: 2em;
+    padding: 1.5em;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+#bdd h1 {
+    font-size: 1.4em;
+    margin-bottom: 0.3em;
+    color: #37474f;
+}
+
+#bdd h2 {
+    margin: 0.3em 0;
+    color: #555;
+}
+
+.btn-link {
+    display: inline-block;
+    background-color: #4e9af1;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-link:hover {
+    background-color: #357acc;
+}
+
+@media (max-width: 600px) {
+    section {
+        margin: 1em;
+        padding: 1em;
+    }
+
+    form input,
+    form button,
+    .btn-link {
+        font-size: 0.95em;
+    }
+}

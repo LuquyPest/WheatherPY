@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurer les alertes</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <section>
+        <h1>Configurer les alertes météo</h1>
+        <form action="/alertes" method="post">
+            <label for="tempmax">Température max (°C):</label>
+            <input type="number" name="tempmax" value="{{ alertes.tempmax }}" required>
+
+            <label for="tempmin">Température min (°C):</label>
+            <input type="number" name="tempmin" value="{{ alertes.tempmin }}" required>
+
+            <label for="hummax">Humidité max (%):</label>
+            <input type="number" name="hummax" value="{{ alertes.hummax }}" required>
+
+            <label for="hummin">Humidité min (%):</label>
+            <input type="number" name="hummin" value="{{ alertes.hummin }}" required>
+
+            <label for="battmin">Batterie min (%):</label>
+            <input type="number" name="battmin" value="{{ alertes.battmin }}" required>
+
+            <label for="emailreceiver">Email du destinataire :</label>
+            <input type="email" name="emailreceiver" value="{{ alertes.emailreceiver }}" required>
+
+            <button type="submit">Enregistrer</button>
+        </form>
+
+        <br>
+        <a href="/" class="btn-link">← Retour à l’accueil</a>
+    </section>
+</body>
+
+</html>
