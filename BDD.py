@@ -79,3 +79,5 @@ def afficherlabdd ():
     for sensor in Sensor.select():
         print(sensor.mac,sensor.temp,sensor.hum,sensor.batt,sensor.heurodatage)
 # afficherlabdd()
+ajouter_noms()
+ajouter_alertes()
